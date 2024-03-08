@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true, // 允许导入资源时使用扩展名
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "importHelpers": true, // 不让同样的辅助函数重复的出现在多个文件中
+    "allowSyntheticDefaultImports": true, // 允许对不包含默认导出的模块使用默认导入。
+    "types": [
+      "node",
+      "vite/client",
+      "jest",
+      "pinia-plugin-persist",
+      "element-plus/global"
+    ],
+    "baseUrl": ".", // 非相对模块的导入可以相对于baseUrl或通过下文会讲到的路径映射来进行解析
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -1,0 +1,95 @@
+{
+  "css.customData": [".vscode/tailwindcss.json"],
+  "i18n-ally.localesPaths": ["src/i18n"],
+  "cSpell.words": [
+    "Cascader",
+    "mutil",
+    "pinia",
+    "Tailwindcss",
+    "unplugin",
+    "Vite",
+    "vueuse"
+  ],
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "-important-",
+      "color": "#b37feb",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "search.exclude": {
+    "**/dist": true,
+    "**/doc-dist": true,
+    "**/js-maps": true
+  },
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/dist",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "stylelint.snippet": ["css", "less", "postcss", "scss", "vue"],
+  "stylelint.validate": ["css", "less", "postcss", "scss", "vue"],
+  "stylelint.configFile": ".stylelintrc.cjs",
+  "vitest.include": ["test/**/*.test.ts"],
+  "pathAlias.aliasMap": {
+    "@": "${cwd}/src"
+  },
+  "pathAlias.autoSuggestion": false
+}

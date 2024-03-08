@@ -1,0 +1,27 @@
+html.dark {
+  --primaryBgColor: #ffffff;
+  --lsyVerticalMainMenuBgSubColor: #ffffff;
+  --lsyMainMenuColor: #000000;
+  --lsyMenuItemHoverBgColor: #000000;
+  --lsyMainMenuItemActiveBgColor: #ffffff;
+
+  // invert(1) 将黑/白两色反转(即:黑变白, 白变黑)
+  // hue-rotate(180deg) 用于调整黑/白之外的颜色
+  filter: invert(1) hue-rotate(180deg);
+
+  .o-lsy-main-logo-text {
+    color: #000000;
+  }
+
+  // ################################ 开始:设置侧边样式
+  .c-lsy-side {
+    background-color: #ffffff;
+  }
+
+  // ################################ 结束:设置侧边样式
+
+  // 对于图片进行二次反转，使其恢复正常颜色
+  img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}

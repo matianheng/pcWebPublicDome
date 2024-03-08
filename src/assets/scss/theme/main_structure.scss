@@ -1,0 +1,64 @@
+// 该文件用于重置结构样式. 包括: 高度，行高，边框(仅限边框粗细和风格,不含颜色)
+// 从导航样式
+.o-lsy-sub-nav {
+  .o-lsy-main-menu-vertical {
+    border: none;
+  }
+}
+
+// ############################ 开始: 重置el-menu颜色(竖向菜单) ############################
+// 主竖向菜单通用样式
+.o-lsy-main-menu-vertical {
+  .el-sub-menu__title,
+  .el-menu-item {
+    height: var(--lsyMenuItemHeight) !important;
+    line-height: var(--lsyMenuItemHeight) !important;
+  }
+}
+
+// 主竖向菜单的tooltip特殊样式
+.el-popper.o-lsy-main-menu-vertical {
+  .el-sub-menu,
+  .el-sub-menu > .el-sub-menu__title {
+    height: var(--lsyMenuItemHeight);
+    line-height: var(--lsyMenuItemHeight);
+  }
+
+  .el-popper {
+    border: none;
+  }
+}
+
+// ############################ 结束: 重置el-menu颜色(竖向菜单) ############################
+
+// ############################ 开始: 重置el-menu颜色(横向菜单) ############################
+// 主横向菜单通用样式
+.o-lsy-main-menu-horizontal {
+  border: none !important;
+
+  .el-sub-menu__title,
+  li.el-menu-item {
+    border: none !important;
+  }
+}
+
+.el-popper {
+  .el-menu--horizontal.o-lsy-main-menu-horizontal {
+    .el-popper {
+      border: none;
+    }
+  }
+}
+
+// ############################ 结束: 重置el-menu颜色(横向菜单) ############################
+
+// ############################ 开始: 重置el-menu颜色(抽屉菜单) ############################
+.o-system-drawer-menu {
+  .el-sub-menu__title,
+  .el-menu-item {
+    height: var(--lsyMenuItemHeight) !important;
+    line-height: var(--lsyMenuItemHeight) !important;
+  }
+}
+
+// ############################ 结束: 重置el-menu颜色(抽屉菜单) ############################

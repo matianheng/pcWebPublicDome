@@ -1,0 +1,58 @@
+/**
+不同设备采用多倍图
+图片命名风格：
+普通图片: xx.png
+2倍图: xx@2x.png
+3倍图: xx@3x.png
+
+调用示例:
+div{ 
+    width:30px; 
+    height:20px; 
+    background-size:30px 20px; 
+    background-repeat:no-repeat; 
+    @include bgImage('special_1'); 
+}
+*/
+@mixin bgImage($url) {
+  background-image: url($url + '.png');
+
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url($url + '@2x.png');
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 3) {
+    background-image: url($url + '@3x.png');
+  }
+}
+
+/**
+多行显示省略号
+
+调用示例
+.main {
+    @include show_line(2);
+}
+.main {
+    @include show_line(3);
+}
+.main {
+    @include show_line(4);
+}
+**/
+@mixin mutilLineEllipsis($line: 2) {
+  display: box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+/**
+单行显示省略号
+**/
+@mixin singleLineEllipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

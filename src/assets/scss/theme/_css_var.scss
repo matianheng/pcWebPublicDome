@@ -1,0 +1,42 @@
+:root {
+  // 主色
+  --primaryColor: rgb(22 119 255);
+
+  // 主色对应的背景色
+  --primaryBgColor: rgb(232 241 255);
+
+  // ######################### 开始: 主导航相关的css变量 #########################
+  // 系统主导航背景色
+  --lsyMainNavBgColor: #001529;
+
+  // 系统主logo文本颜色
+  --lsyMainLogoTextColor: #ffffff;
+
+  // 系统主菜单文本颜色
+  --lsyMainMenuColor: rgb(255 255 255 / 65%);
+
+  // 系统垂直主菜单的拥有二级菜单的菜单项背景色
+  --lsyVerticalMainMenuBgSubColor: rgb(0 12 23);
+
+  // 系统主菜单项hover颜色
+  --lsyMainMenuItemHoverColor: #ffffff;
+
+  // 系统主菜单项激活时的背景颜色
+  --lsyMainMenuItemActiveBgColor: var(--primaryColor);
+
+  // 系统菜单项hover背景颜色
+  --lsyMenuItemHoverBgColor: rgb(255 255 255 / 10%);
+
+  // 系统从菜单项hover背景颜色
+  --lsySubNavMenuItemHoverBgColor: #f5f5f5;
+
+  // 系统菜单项高度
+  --lsyMenuItemHeight: 40px; /* px-to-viewport-ignore */
+  // 系统从导航背景色
+  --lsySubNavBgColor: #ffffff;
+
+  // 系统从菜单文本颜色
+  --systemSubMenuColor: rgb(0 0 0 / 92%);
+
+  // ######################### 结束: 主导航相关的css变量 #########################
+}

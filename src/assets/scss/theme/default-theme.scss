@@ -1,0 +1,278 @@
+// 该文件用于重置颜色样式. 包括: 文字颜色, 背景颜色, 阴影, 边框(仅限边框颜色,不含边框粗细和风格)
+.o-lsy-main-layout-bg {
+  background-color: #f0f2f5;
+}
+
+// 主导航样式
+.o-lsy-main-nav {
+  background-color: var(--lsyMainNavBgColor);
+
+  .o-lsy-main-logo-text {
+    color: var(--lsyMainLogoTextColor);
+  }
+}
+
+// 从导航样式
+.o-lsy-sub-nav {
+  background-color: var(--lsySubNavBgColor);
+  box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
+}
+
+// ############################ 开始: 重置el-menu颜色(竖向菜单) ############################
+
+// 主竖向菜单收缩状态的样式
+.o-lsy-main-nav .el-menu--collapse.o-lsy-main-menu-vertical {
+  // 包含子菜单那项的默认样式
+  .is-active.el-sub-menu {
+    // 包含子菜单那项的激活样式
+    .el-sub-menu__title {
+      background-color: var(--lsyMainMenuItemActiveBgColor);
+
+      &:hover {
+        background-color: var(--lsyMainMenuItemActiveBgColor);
+      }
+    }
+
+    .o-menu-icon,
+    .el-icon {
+      color: var(--lsyMainMenuItemHoverColor);
+    }
+  }
+}
+
+.o-lsy-main-nav .o-lsy-main-menu-vertical {
+  .el-sub-menu .el-menu {
+    background-color: var(--lsyVerticalMainMenuBgSubColor);
+  }
+}
+
+// 主竖向菜单展开状态以及tooltip的公共样式
+.o-lsy-main-nav .o-lsy-main-menu-vertical,
+.el-popper.o-lsy-main-menu-vertical {
+  border: none !important;
+  background-color: var(--lsyMainNavBgColor);
+
+  // 默认样式
+  .el-menu {
+    background-color: var(--lsyMainNavBgColor);
+  }
+
+  .o-menu-title,
+  .o-menu-icon,
+  .el-icon {
+    color: var(--lsyMainMenuColor);
+  }
+
+  // hover样式
+  .el-menu-item:hover,
+  .el-sub-menu__title:hover {
+    background-color: var(--lsyMenuItemHoverBgColor);
+
+    .o-menu-title,
+    .o-menu-icon,
+    .el-icon {
+      color: var(--lsyMainMenuItemHoverColor);
+    }
+  }
+
+  .is-active > .el-sub-menu__title {
+    .o-menu-title,
+    .o-menu-icon,
+    .el-icon {
+      color: var(--lsyMainMenuItemHoverColor);
+    }
+  }
+
+  // 不含子菜单的菜单项的激活样式
+  .el-menu-item.is-active {
+    background-color: var(--lsyMainMenuItemActiveBgColor);
+
+    .o-menu-title,
+    .o-menu-icon {
+      color: var(--lsyMainMenuItemHoverColor);
+    }
+  }
+}
+
+// 从竖向菜单, 展开时的激活样式
+.o-lsy-sub-nav .o-lsy-main-menu-vertical {
+  .el-menu-item:hover,
+  .el-sub-menu__title:hover {
+    background-color: var(--lsySubNavMenuItemHoverBgColor);
+  }
+
+  .el-menu-item.is-active {
+    color: var(--lsyMainMenuItemActiveBgColor);
+    background-color: var(--primaryBgColor);
+  }
+
+  .el-sub-menu.is-active {
+    > .el-sub-menu__title {
+      color: var(--lsyMainMenuItemActiveBgColor);
+    }
+  }
+}
+
+// 从竖向菜单, 收缩时的激活样式
+.o-lsy-sub-nav .el-menu--collapse.o-lsy-main-menu-vertical {
+  .el-sub-menu.is-active {
+    > .el-sub-menu__title {
+      background-color: var(--primaryBgColor);
+    }
+
+    .o-menu-title,
+    .o-menu-icon {
+      color: var(--lsyMainMenuItemActiveBgColor);
+    }
+  }
+}
+
+// 从竖向菜单，收缩状态下，popper样式设置
+.el-popper.o-lsy-main-menu-vertical.o-sub-menu-popper {
+  background-color: var(--lsySubNavBgColor);
+
+  .o-lsy-main-menu-vertical.o-sub-menu-popper {
+    background-color: var(--lsySubNavBgColor);
+
+    .el-menu {
+      color: var(--systemSubMenuColor);
+      background-color: var(--lsySubNavBgColor);
+
+      .o-menu-title,
+      .o-menu-icon,
+      .el-icon {
+        color: var(--systemSubMenuColor);
+      }
+    }
+  }
+
+  .el-menu {
+    .el-menu-item:hover {
+      color: var(--lsyMainMenuItemActiveBgColor);
+      background-color: var(--lsySubNavBgColor);
+
+      .o-menu-title,
+      .o-menu-icon,
+      .el-icon {
+        color: var(--lsyMainMenuItemActiveBgColor);
+      }
+    }
+
+    .el-menu-item.is-active {
+      color: var(--systemSubMenuColor);
+      background-color: var(--primaryBgColor);
+
+      .o-menu-title,
+      .o-menu-icon,
+      .el-icon {
+        color: var(--lsyMainMenuItemActiveBgColor);
+      }
+    }
+  }
+}
+
+// ############################ 结束: 重置el-menu颜色(竖向菜单) ############################
+
+// ############################ 开始: 重置el-menu颜色(横向菜单) ############################
+// 主横向菜单激活时样式
+.o-lsy-main-nav .el-menu--horizontal.o-lsy-main-menu-horizontal,
+.el-popper.o-lsy-main-menu-horizontal {
+  background-color: var(--lsyMainNavBgColor);
+
+  // 默认样式
+  .el-menu {
+    background-color: var(--lsyMainNavBgColor);
+  }
+
+  .o-menu-title,
+  .o-menu-icon,
+  .el-icon {
+    color: var(--lsyMainMenuColor);
+  }
+
+  .el-sub-menu__title,
+  li.el-menu-item,
+  div.el-sub-menu__title {
+    background-color: var(--lsyMainNavBgColor);
+  }
+
+  // hover样式
+  li.el-menu-item:hover,
+  div.el-sub-menu__title:hover,
+  .el-menu-item.is-active {
+    background-color: var(--lsyMenuItemHoverBgColor);
+
+    .o-menu-title,
+    .o-menu-icon,
+    .el-icon {
+      color: var(--lsyMainMenuItemHoverColor);
+    }
+  }
+
+  li.el-menu-item.is-active {
+    background-color: var(--lsyMainMenuItemActiveBgColor);
+  }
+
+  .el-sub-menu.is-active {
+    > .el-sub-menu__title {
+      .o-menu-title,
+      .o-menu-icon,
+      .el-icon {
+        color: var(--lsyMainMenuItemHoverColor);
+      }
+    }
+  }
+}
+
+// 主横向菜单特殊样式
+.o-lsy-main-nav .el-menu--horizontal.o-lsy-main-menu-horizontal {
+  .is-active.el-sub-menu {
+    div.el-sub-menu__title {
+      background-color: var(--lsyMainMenuItemActiveBgColor);
+    }
+  }
+}
+
+.el-popper {
+  .el-menu--horizontal.o-lsy-main-menu-horizontal {
+    .is-active.el-sub-menu {
+      .el-sub-menu__title {
+        background-color: var(--lsyMainNavBgColor);
+      }
+    }
+  }
+}
+
+// ############################ 结束: 重置el-menu颜色(横向菜单) ############################
+
+// ############################ 开始: 重置el-menu颜色(抽屉菜单) ############################
+.o-system-drawer-menu {
+  .el-menu-item:hover,
+  .el-sub-menu__title:hover {
+    background-color: var(--lsySubNavMenuItemHoverBgColor);
+  }
+
+  .el-menu-item.is-active {
+    color: var(--lsyMainMenuItemActiveBgColor);
+    background-color: var(--primaryBgColor);
+  }
+
+  .el-sub-menu.is-active {
+    > .el-sub-menu__title {
+      color: var(--lsyMainMenuItemActiveBgColor);
+    }
+  }
+}
+
+// ############################ 结束: 重置el-menu颜色(抽屉菜单) ############################
+
+// ############################ 开始: 设置LsyHeader.vue样式
+.o-lsy-sub-nav-header {
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+
+  .c-lsy-header {
+    background-color: #ffffff;
+  }
+}
+
+// ############################ 结束: 设置LsyHeader.vue样式

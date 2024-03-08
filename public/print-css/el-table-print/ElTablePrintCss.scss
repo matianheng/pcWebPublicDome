@@ -1,0 +1,77 @@
+@page {
+  // 强制设置内容大小为A4纸大小, 如果用户手动选为A3纸张大小, 则内容还是A4纸大小
+  // 如果不设置@page则内容会尽可能充满, 但对样式有更高的要求(要求能适应纸张大小, 如何抉择, 自行决定)
+  size: A4 portrait;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.el-table {
+  // 解决高度无法完全撑开问题
+  height: auto !important;
+  max-height: none !important;
+}
+.el-table__inner-wrapper {
+  // 解决高度无法完全撑开问题
+  height: auto !important;
+  max-height: none !important;
+}
+.el-scrollbar__wrap {
+  // 解决高度无法完全撑开问题
+  height: auto !important;
+  max-height: none !important;
+}
+
+.el-table thead {
+  color: #909399;
+}
+
+.el-table td.el-table__cell,
+.el-table th.el-table__cell.is-leaf {
+  border-bottom: 1px solid #ebeef5;
+  // border-right: 1px solid #ebeef5;
+  padding: 8px 0;
+}
+
+.el-table .cell {
+  box-sizing: border-box;
+  line-height: 23px;
+  padding: 0 12px;
+  text-align: left;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.el-table__body {
+  tr {
+    /* 防止td的内容被分割到两页 */
+    page-break-inside: avoid;
+  }
+  .cell {
+    color: rgb(96, 98, 102);
+  }
+}
+
+table {
+  /* 让表格宽度占满父容器*/
+  width: 100% !important;
+  table-layout: auto !important;
+}
+
+.el-scrollbar__view {
+  /* 让表格宽度占满父容器*/
+  display: block !important;
+  width: 100% !important;
+}
+
+.el-table .el-tooltip {
+  width: 100% !important;
+}
+/* 如果外部对el-table的原始的thead进行了一次复制(目的是为了保证每页都有表头), 则该css需要保留, 否则需要去除 */
+.el-table__header {
+  display: none;
+}

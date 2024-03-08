@@ -1,0 +1,46 @@
+html,
+body,
+#app {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.o-lsy-dialog {
+  .el-dialog {
+    width: 340px; /* px-to-viewport-ignore */
+  }
+
+  .el-dialog__body {
+    padding-top: 0.4rem;
+  }
+}
+
+@media (width >= 640px) {
+  .o-feature-dialog {
+    .el-dialog {
+      width: 460px; /* px-to-viewport-ignore */
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  .o-feature-dialog {
+    .el-dialog {
+      width: 660px; /* px-to-viewport-ignore */
+    }
+  }
+}
+
+.o-check-system-update-notify {
+  .el-text {
+    align-self: self-start;
+  }
+
+  .el-notification__group {
+    width: 100%;
+  }
+}

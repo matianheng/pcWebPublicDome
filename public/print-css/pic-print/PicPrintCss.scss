@@ -1,0 +1,14 @@
+@page {
+  // 强制设置内容大小为A4纸大小, 如果用户手动选为A3纸张大小, 则内容还是A4纸大小
+  // 如果不设置@page则内容会尽可能充满, 但对样式有更高的要求(要求能适应纸张大小, 如何抉择, 自行决定)
+  size: A4 portrait;
+}
+img {
+  // page-break-inside 只对 块级元素有效
+  display: block;
+  // 防止图片被分割在多页
+  page-break-inside: avoid;
+  // 打印对应的是打印纸, 因此这些单位, 不能再使用px, rem这类显示器中使用的逻辑单位, 而应该使用mm,cm等打印机使用的物理单位
+  margin-bottom: 1mm;
+  width: 100%;
+}

@@ -1,0 +1,20 @@
+.u-clear-el-card-pb {
+  .el-card__body {
+    padding-bottom: 0;
+  }
+}
+
+// 解决元素全屏之后，全屏元素的部分子元素背景变黑色问题
+.u-full-screen-ele:fullscreen {
+  background-color: #ffffff;
+}
+
+// 给表格的表头设置背景色
+.u-system-table {
+  .el-table__header {
+    .el-table__cell {
+      color: rgb(0 0 0 / 60%);
+      background: #f7f7f7;
+    }
+  }
+}

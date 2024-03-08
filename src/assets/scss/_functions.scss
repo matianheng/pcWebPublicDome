@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+// html文档中根元素的字体大小
+$rootFontSize: 16;
+/*
+将px转换为rem
+
+e.g.
+h1{
+  // 此时字体大小将被设置为 1.25rem; 1.25rem = 20/16
+  font-size: px_to_rem(20);
+  left: calc(50% - #{px_to_rem(321)});
+}
+
+@param $px px值(数值). 如: 10, 15
+@param $baseFontSize 1rem对应的px大小(数值). 默认为$rootFontSize
+@return 带rem单位的值. 如:3rem, 1.25rem
+*/
+@function px_to_rem($px, $baseFontSize: $rootFontSize) {
+  @return math.div($px, $baseFontSize) * 1rem;
+}

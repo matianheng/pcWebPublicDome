@@ -1,0 +1,219 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // 任务类别
+      "type": "npm",
+      // 需要执行npm脚本
+      "script": "type-check",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      // 声明无需扫描脚本输出
+      "problemMatcher": [],
+      "label": "vue-tsc类型检查"
+    },
+    {
+      // 任务的名称
+      "label": "git-add",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["add", "."],
+      // 声明无需扫描脚本输出
+      "problemMatcher": []
+    },
+    {
+      // 任务的名称
+      "label": "git-status",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["status"],
+      // 声明无需扫描脚本输出
+      "problemMatcher": []
+    },
+    {
+      // 任务的名称
+      "label": "git-commit",
+      // 任务类别，shell代表脚本
+      "type": "npm",
+      // 任务脚本，可以是yarn/npm/git 等
+      "script": "git-commit",
+      // 声明无需扫描脚本输出
+      "problemMatcher": [],
+      "presentation": {
+        // 让任务总在终端显示
+        "reveal": "always",
+        // 让终端自动获取焦点
+        "focus": true
+      }
+    },
+    {
+      "label": "将所有文件提交到git",
+      "type": "shell",
+      // 让这些任务顺序执行
+      "dependsOn": ["git-add", "git-status", "git-commit"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "执行ts类型检查,再将所有文件提交到git",
+      "type": "shell",
+      // 让这些任务顺序执行
+      "dependsOn": ["vue-tsc类型检查", "将所有文件提交到git"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      // 任务的名称(P.S. 执行这个命令需要先安装vi编辑器, i进入编辑模式, esc进入等待模式, wq表示保存并退出, q!表示不保存退出)
+      "label": "git-commit-amend",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["commit", "--amend"],
+      // 声明无需扫描脚本输出
+      "problemMatcher": [],
+      "presentation": {
+        // 让任务总在终端显示
+        "reveal": "always",
+        // 让终端自动获取焦点
+        "focus": true
+      }
+    },
+    {
+      // 任务的名称
+      "label": "查看git最后一条log的详细信息",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["log", "--stat", "-1", "--date=format:%Y-%m-%d %H:%M:%S"],
+      // 声明无需扫描脚本输出
+      "problemMatcher": [],
+      "presentation": {
+        // 让任务总在终端显示
+        "reveal": "always",
+        // 让终端自动获取焦点
+        "focus": true
+      }
+    },
+    {
+      // 任务的名称
+      "label": "查看git最后10条log",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": [
+        "log",
+        "--pretty=format:'%h -%d %s (%ci) <%an>'",
+        "-10",
+        "--date=format:%Y-%m-%d %H:%M:%S"
+      ],
+      // 声明无需扫描脚本输出
+      "problemMatcher": [],
+      "presentation": {
+        // 让任务总在终端显示
+        "reveal": "always",
+        // 让终端自动获取焦点
+        "focus": true
+      }
+    },
+    {
+      "label": "将本次变更合并到上一个git commit中",
+      "type": "shell",
+      // 让这些任务顺序执行
+      "dependsOn": ["git-add", "git-status", "git-commit-amend"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      // 任务的名称
+      "label": "git-stash",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["stash", "-m", "${input:git-stash-message}"],
+      // 声明无需扫描脚本输出
+      "problemMatcher": []
+    },
+    {
+      "label": "将所有变更暂存(无论是否git add)",
+      "type": "shell",
+      // 让这些任务顺序执行
+      "dependsOn": ["git-add", "git-status", "git-stash"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      // 任务的名称
+      "label": "git-pull",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["pull", "origin", "${input:git-remote-branch}"],
+      // 声明无需扫描脚本输出
+      "problemMatcher": []
+    },
+    {
+      "label": "将所有文件提交到git, 并拉取远程分支代码到当前分支",
+      "type": "shell",
+      // 让这些任务顺序执行
+      "dependsOn": ["将所有文件提交到git", "git-pull"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "将指定分支合并到当前分支(不显示git-status)",
+      // 任务类别，shell代表脚本
+      "type": "shell",
+      // 任务脚本，可以是yarn/npm/git 等
+      "command": "git",
+      // 命令参数
+      "args": ["merge", "${input:git-local-branch}"],
+      // 声明无需扫描脚本输出
+      "problemMatcher": []
+    },
+    {
+      "label": "将指定分支合并到当前分支(显示git-status, 请确保所有代码已commit)",
+      "type": "shell",
+      // 让这些任务顺序执行
+      "dependsOn": ["git-status", "将指定分支合并到当前分支(不显示git-status)"],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "git-stash-message",
+      "type": "promptString",
+      "description": "请输入git commit消息"
+    },
+    {
+      "id": "git-remote-branch", // 输入参数的id，与上面变量${input:branch}这个branch保持一致
+      "type": "pickString",
+      "options": ["master", "develop"],
+      "description": "请指定需要拉取的远程分支"
+    },
+    {
+      "id": "git-local-branch", // 输入参数的id，与上面变量${input:branch}这个branch保持一致
+      "type": "pickString",
+      "options": ["master", "develop"],
+      "description": "请指定需要合并的本地分支(该分支将合并到当前分支)"
+    }
+  ]
+}

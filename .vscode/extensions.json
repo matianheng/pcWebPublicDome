@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "box-of-hats.bemhelper",
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "dominicvonk.parameter-hints",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "vue.vscode-typescript-vue-plugin",
+    "kingwl.vscode-vitest-runner",
+    "dariofuzinato.vue-peek",
+    "sdras.vue-vscode-snippets",
+    "mrmlnc.vscode-scss"
+  ]
+}
